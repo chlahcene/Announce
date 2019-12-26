@@ -1,0 +1,14 @@
+# Dependency directories
+node_modules/
+
+# dotenv environment variables file
+.env
+
+# coverage
+coverage/
+
+# package-lock.json
+package-lock.json
+
+# database
+db/
