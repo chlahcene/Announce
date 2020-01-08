@@ -1,5 +1,6 @@
 const mongoose = require('mongoose');
 const dbConfig = require('../../config/db.config');
+const logger = require('../../config/logger.config');
 
 /**
  * connect db
@@ -18,7 +19,13 @@ const connect = (dbName = '') => {
   mongoose.set('useCreateIndex', true);
   mongoose.set('useUnifiedTopology', true);
   mongoose.set('useFindAndModify', false);
-  mongoose.connect(url);
+
+  try {
+    mongoose.connect(url);
+    logger.info(`connextion to database dbname on - ${url}`);
+  } catch (error) {
+    throw error(error);
+  }
 };
 
 const disconnect = (done) => {

@@ -4,6 +4,7 @@ const cleandb = require('../server/src/utils/database/cleanDb');
 const mongodb = require('../server/src/models/mongodb');
 const app = require('../server/src/app');
 
+// eslint-disable-next-line no-unused-vars
 const request = supertest(app);
 const databaseName = 'test';
 

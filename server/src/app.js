@@ -23,6 +23,10 @@ app.use(bodyParser.urlencoded({ extended: false }));
 
 // setting various HTTP headers
 app.use(helmet());
+
+// Set the static files location.
+app.use(express.static(`${__dirname}/../../client/public`));
+
 /*
 // secure cookie settings
 const sessionSecret = process.env.SESSION_SECRET;
