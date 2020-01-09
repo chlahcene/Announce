@@ -9,14 +9,14 @@
   "scripts": {
     "db-on": "mkdir -p ./db && mongod --dbpath ./db",
     "db-off": "killall mongod",
-    "server-watch": "nodemon -r dotenv-safe/config index.js",
+    "server:watch": "nodemon -r dotenv-safe/config index.js",
     "server": "npm -r dotenv-safe/config index.js",
     "client": "",
     "dev": "concurrently --kill-others-on-fail \"npm run server-watch\" \"npm run client\"",
     "start": "concurrently --kill-others-on-fail \"npm run server\" \"npm run client\"",
     "lint": "eslint ./",
     "test": "jest -i --verbose --coverage --runInBand --passWithNoTests --detectOpenHandles",
-    "test:watch": "jest --watch           -i --verbose --coverage --runInBand --passWithNoTests --detectOpenHandles",
+    "test:watch": "jest --watch -i --verbose --coverage --runInBand --passWithNoTests --detectOpenHandles",
     "generate-docs": "jsdoc -c ./jsdoc.config.js"
   },
   "keywords": [],

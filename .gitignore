@@ -12,3 +12,9 @@ package-lock.json
 
 # database
 db/
+
+# bin
+bin/
+
+# log
+*.log
