@@ -1,27 +1,25 @@
 // eslint-disable-next-line node/no-unpublished-require
 const supertest = require('supertest');
-const cleandb = require('../server/src/utils/database/cleanDb');
-const mongodb = require('../server/src/models/mongodb');
+const mongodb = require('../server/src/utils/database');
 const app = require('../server/src/app');
 
 // eslint-disable-next-line no-unused-vars
 const request = supertest(app);
-const databaseName = 'test';
 
 describe('Test mongodb', () => {
   // Connect to Mongoose
   beforeAll(async () => {
-    mongodb.connect(databaseName);
+    mongodb.connect();
   });
 
   // Cleans up database between each test
   afterEach(async () => {
-    await cleandb.removeAllCollections();
+    await mongodb.clean.removeAllCollections();
   });
 
   // Disconnect Mongoose
   afterAll(async () => {
-    await cleandb.dropAllCollections();
+    await mongodb.clean.dropAllCollections();
     await mongodb.disconnect();
   });
 

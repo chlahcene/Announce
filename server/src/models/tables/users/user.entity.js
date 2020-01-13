@@ -1,6 +1,6 @@
 const mongoose = require('mongoose');
 const mongoosePaginate = require('mongoose-paginate-v2');
-const { roles, userRole } = require('../../../../config/role.config');
+const { roles, userRole } = require('../../../utils/role');
 
 const { Schema } = mongoose;
 

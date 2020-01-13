@@ -2,7 +2,7 @@
 /* eslint-disable no-await-in-loop */
 /* eslint-disable no-restricted-syntax */
 const mongoose = require('mongoose');
-const logger = require('../../../config/logger.config')();
+const logger = require('../logger');
 
 async function removeAllCollections() {
   const collections = Object.keys(mongoose.connection.collections);
@@ -31,7 +31,7 @@ async function dropAllCollections() {
         )
       )
         return;
-      logger.log(error.message);
+      logger.error(error.message);
     }
   }
 }
