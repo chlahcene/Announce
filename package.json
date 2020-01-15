@@ -1,5 +1,5 @@
 {
-  "name": "fellah",
+  "name": "announce",
   "version": "1.0.0",
   "engines": {
     "node": ">=8.10.0"
@@ -11,7 +11,7 @@
     "db-off": "killall mongod",
     "server:watch": "nodemon -r dotenv-safe/config index.js",
     "server": "npm -r dotenv-safe/config index.js",
-    "client": "",
+    "client": "cd client && npm start",
     "dev": "concurrently --kill-others-on-fail \"npm run server:watch\" \"npm run client\"",
     "start": "concurrently --kill-others-on-fail \"npm run server\" \"npm run client\"",
     "lint": "eslint ./",
